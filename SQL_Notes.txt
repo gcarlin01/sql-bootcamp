@@ -84,5 +84,14 @@ Most Common Aggregate Functions: // Aggregate function calls happen only in the 
 - SUM()
 
 
-SELECT MIN(replacement_cost) FROM film;      // Minimum replacement cost for a film 
+SELECT MIN(replacement_cost) FROM film;      // Minimum replacement cost for a film, MIN and MAX only returns a single value
+
+SELECT MAX(replacement_cost), MIN(replacement_cost)
+FROM film;                                                // This will come back as two values MIN and MAX 
+
+SELECT ROUND(AVG(replacement_cost), 2)
+FROM film;                                          // AVG of replacement_cost rounded up to 2 decimal 
+
+SELECT SUM(replacement_cost)
+FROM film;                                      // SUM of replacement_cost
 
