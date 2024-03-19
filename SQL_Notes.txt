@@ -184,3 +184,8 @@ SELECT SUM(amount) AS net_revenue
 FROM payment;                              // set a new name (net_revenue) for your column. the AS statement can only be present in the SELECT  
 
 
+SELECT payment_id, payment.customer_id, first_name 
+FROM payment
+INNER JOIN customer
+ON payment.customer_id = customer.customer_id; // Inner Join joins both tables and returns whatever you select based on mutual customer_id in this case.
+
