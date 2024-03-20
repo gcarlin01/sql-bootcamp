@@ -189,3 +189,10 @@ FROM payment
 INNER JOIN customer
 ON payment.customer_id = customer.customer_id; // Inner Join joins both tables and returns whatever you select based on mutual customer_id in this case.
 
+
+SELECT * FROM customer
+FULL OUTER JOIN payment
+ON customer.customer_id = payment.customer_id
+WHERE customer.customer_id IS null 
+OR payment.customer_id IS null;             // Outter Join joins everything but when used with WHERE and setting the parallel values to null throws the not common elements of the join
+
