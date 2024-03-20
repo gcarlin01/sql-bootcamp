@@ -196,3 +196,10 @@ ON customer.customer_id = payment.customer_id
 WHERE customer.customer_id IS null 
 OR payment.customer_id IS null;             // Outter Join joins everything but when used with WHERE and setting the parallel values to null throws the not common elements of the join
 
+
+SELECT film.film_id, title, inventory_id
+FROM film  
+LEFT OUTER JOIN inventory 
+ON inventory.film_id = film.film_id
+WHERE inventory.film_id IS null;           // LEFT OUTTER JOIN or LEFT JOIN when used with when and setting table b column value to null gives you only the value for table a that is NOT in table b 
+
