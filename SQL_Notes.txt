@@ -231,3 +231,42 @@ SELECT title, actor.first_name, actor.last_name FROM film
 INNER JOIN film_actor ON film.film_id = film_actor.film_id
 INNER JOIN actor ON film_actor.actor_id = actor.actor_id
 WHERE actor.first_name = 'Nick' AND actor.last_name = 'Wahlberg'
+
+
+
+TIME - contains only time (hours, minutes and seconds)
+DATE - contains only the dates
+TIMESTAMP - contains date and time 
+TIMESTAMPTZ - contains date, time and timezone
+
+
+SHOW ALL                  // runtime parameters
+
+SHOW TIMEZONE             // shows my timezone
+
+SELECT NOW()              // returns timestamp with timezone
+
+SELECT TIMEOFDAY()        // returns same info as NOW() but as string 
+
+SELECT CURRENT_TIME       // returns current time with timezone 
+
+SELECT CURRENT_DATE       // returns current date 
+
+
+SELECT EXTRACT(YEAR FROM payment_date)
+AS myyear
+FROM payment                            // EXTRACT extracts a sub-component of a date value. We can extract YEAR, MONTH, QUARTER, ETC..
+
+
+SELECT AGE(payment_date)
+FROM payment                            // AGE returns how old a date is.
+
+
+SELECT TO_CHAR(payment_date, 'MONTH-YYY')
+FROM payment                               // TO_CHAR() is a general function to convert data types to text.
+                                           // Patterns of output must be inculded, for more info:  https://www.postgresql.org/docs/12/functions-formatting-html  
+
+
+Challenge Questions:
+
+1. During which months did payments occur? Format your answer to return back the full month name
