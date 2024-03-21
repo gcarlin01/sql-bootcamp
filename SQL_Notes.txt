@@ -203,3 +203,9 @@ LEFT OUTER JOIN inventory
 ON inventory.film_id = film.film_id
 WHERE inventory.film_id IS null;           // LEFT OUTTER JOIN or LEFT JOIN when used with when and setting table b column value to null gives you only the value for table a that is NOT in table b 
 
+
+SELECT film.film_id, title, inventory_id
+FROM film  
+RIGHT OUTER JOIN inventory 
+ON inventory.film_id = film.film_id
+WHERE film.film_id IS null;                 // Same concept as LEFT OUTTER JOIN
