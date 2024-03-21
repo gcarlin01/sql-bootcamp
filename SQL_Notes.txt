@@ -285,3 +285,53 @@ or
 Select COUNT(*)
 FROM payment 
 WHERE EXTRACT(dow FROM payment_date) = 1
+
+
+For mathematical functions refer to:  https://www.postgresql.org/docs/12/functions-math.html
+
+SELECT ROUND(rental_rate/replacement_cost, 4)*100
+AS percent_cost
+FROM film                       // Gettting the percentage of the rental_rate on regards of the film replacement_cost.
+
+
+For string functions and operators refer to:  https://www.postgresql.org/docs/12/functions-string.html
+
+SELECT LENGTH(first_name)
+FROM customer;                // self-explanatory..
+
+
+SELECT first_name || ' ' || upper(last_name)
+AS full_name
+FROM customer                 //  String concatination setting las_name in upper case
+
+
+creating custom emails:
+
+SELECT LOWER(LEFT(first_name, 1)) || LOWER(last_name) || '@mycompany.com'
+AS custom_email
+FROM customer;                // output= "jely@mycompany.com""msmith@mycompany.com"
+
+
+Sub-querying:
+
+SELECT student, grade
+FROM test_scores
+WHERE garde > (SELECT AVG(grade)
+FROM test_scores)               // How can we get a list of students who scored better than the average grade?
+                            
+
+SELECT student, grade
+FROM test_scores
+WHERE student IN(SELECT student
+FROM honor_roll_table)              // IN can be used here in sort of join functionality for multiple results
+
+
+SELECT column_name
+FROM table_name
+WHERE EXISTS 
+(SELECT column_name 
+FROM table_name
+WHERE condition)                    // EXISTS used in subquery which expects a true validation
+                                    // NOT EXISTS same but expects a false validation 
+
+                                    
