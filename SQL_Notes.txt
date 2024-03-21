@@ -455,3 +455,22 @@ INNER JOIN cd.members AS f2
 ON f1.memid = f2.memid
 WHERE firstname = 'David' AND surname = 'Farrell';
 
+
+CREATING DATABASES AND TABLES 
+
+Data Types:
+
+- Boolean: T or F
+- Character: char, varchar and text
+- Numeric: integer and floating-point number
+- Temporal: date, time, timestamp and interval
+NOT SO COMMON 
+- UUID: universallly unique identifiers
+- Array: Stores an array of srtings, numbers, etc 
+- JSON
+- Hstore key-value pair
+- Special types such as network address and geometric data 
+
+
+PK = Primary key to a table
+FK = Foreign Key to another table which can be located at the constraints properties/dependencies 
