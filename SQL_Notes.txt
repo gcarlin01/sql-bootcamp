@@ -973,3 +973,9 @@ DROP VIEW IF EXISTS customer_info
 changing name of the view:
 ALTER VIEW customer_info RENAME TO c_info
 
+
+IMPORT/EXPORT 
+
+mostyly for CSV import
+The IMPORT command does not provide tables.
+Best way is to create the tables manually matching the column names and then import your csv 
