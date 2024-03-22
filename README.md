@@ -10,9 +10,9 @@ Weblink: <https://www.udemy.com/course/the-complete-sql-bootcamp/>
 
 This repository contains the code files I produced during my tests in the course and gives an idea of what I've learned during this course.
 
-## Course Description
+Practice exercises using PostgreSQL 16 in pgAdmin 4
 
-The below text has been copied from the Udemy website on 25th of July 2021.
+## Course Description
 
 Learn how to use SQL quickly and effectively with this course!
 
