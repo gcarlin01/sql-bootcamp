@@ -1,4 +1,4 @@
-# Udemy SQL Course: Complete SQL Bootcamp From Zero to Hero in SQL
+# Udemy SQL Course: Complete SQL Bootcamp From Zero to Hero
 
 Course from Udemy titled: **The Complete SQL Bootcamp: Go from Zero to Hero**
 
