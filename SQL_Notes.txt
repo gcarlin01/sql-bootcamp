@@ -1,5 +1,7 @@
 SQL 
 
+SQL Statement Fundamentals
+
 SELECT * FROM film;	// Selects all columns from film table
 
 SELECT * FROM actor;	   // selects all columns from actor table
