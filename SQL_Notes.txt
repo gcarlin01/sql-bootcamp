@@ -613,3 +613,48 @@ DELETE FROM job
 WHERE job_name = 'Cowboy'
 RETURNING job_id, job_name
 
+
+ALTER: Allows for changes to an existing table structure, such as: Adding, dropping or renaming columns, changing a column data type, setting a column values to DEFAULT, renaming, and adding CHECK contraints.
+
+ALTER Syntax:
+
+Adding column
+ALTER TABLE table_name
+ADD COLUMN newcol_name
+
+Removing column
+ALTER TABLE table_name
+DROP COLUMN col_name
+
+Alter column contraints
+ALTER TABLE table_name
+ALTER COLUMN col_name
+SET DEFAULT value      // SET NOT NULL  // DROP NOT NULL // ADD CONSTRAINT constraint_name
+
+Examples:
+
+Renaming table
+
+ALTER TABLE information
+RENAME TO new_info;
+
+
+Renaming column 
+
+ALTER TABLE new_info
+RENAME COLUMN person TO people;
+
+
+Removing a NOT NULL constraint from column
+
+ALTER TABLE new_info
+ALTER COLUMN people DROP NOT NULL
+
+
+Setting a column constraint
+
+ALTER TABLE new_info
+ALTER COLUMN people SET NOT NULL
+
+For more info on ALTER check: https://www.postgresql.org/docs/current/sql-altertable-html
+
