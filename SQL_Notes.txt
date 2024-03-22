@@ -562,3 +562,33 @@ VALUES
 INSERT INTO account_job(user_id, job_id, hire_date)
 VALUES 
 ('1', '1', CURRENT_TIMESTAMP)
+
+
+UPDATE: allows for the changing of values of the column in a table
+
+UPDATE Syntax:
+
+UPDATE table
+SET column1 = value1,
+    column2 = value2,...
+WHERE
+    condition;
+
+
+UPDATE account
+SET last_login = created_on;
+
+UPDATE join using another table's values:
+UPDATE TableA
+SET original_col = TableB.new_col
+FROM tableB
+WHERE tableA.id = TableB.id
+
+UPDATE account
+SET last_login = created_on
+RETURNING account_id, last_login;
+
+UPDATE account_job
+SET hire_date = account.created_on
+FROM account
+WHERE account_job.user_id = account.user_id;
