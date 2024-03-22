@@ -592,3 +592,24 @@ UPDATE account_job
 SET hire_date = account.created_on
 FROM account
 WHERE account_job.user_id = account.user_id;
+
+
+DELETE: removes rows from a table
+
+DELETE Syntax:
+
+DELETE FROM table
+WHERE row_id = 1 
+
+DELETE FROM tableA
+USING TableB
+WHERE tableA.id = TableB.id
+
+DELETE FROM table       // deletes all rows.
+
+DELETE can also be used with RETURNING like UPDATE
+
+DELETE FROM job
+WHERE job_name = 'Cowboy'
+RETURNING job_id, job_name
+
